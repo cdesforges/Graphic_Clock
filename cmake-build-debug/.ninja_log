@@ -1,0 +1,14 @@
+# ninja log v6
+6	199	1728608098798735381	CMakeFiles/Graphic_Clock.dir/CounterView.cpp.o	49629cbed3fb1447
+497	532	1728695072628195584	Graphic_Clock	498f961fccba2dd8
+6	500	1728692673405255493	CMakeFiles/Graphic_Clock.dir/Clock.cpp.o	a66e04e08db97896
+3	29	1728690892728907051	CMakeFiles/Graphic_Clock.dir/Counter.cpp.o	b4c47d49d446aa59
+5	527	1728694747496641888	CMakeFiles/Graphic_Clock.dir/ClockView.cpp.o	a6aacc1f9991dfc6
+4	533	1728695015277450632	CMakeFiles/Graphic_Clock.dir/ClockController.cpp.o	e8560a5c011655c2
+3	496	1728695072134579010	CMakeFiles/Graphic_Clock.dir/main.cpp.o	15d28a1af99defbb
+5	63	1728695250557707325	build.ninja	e221034596656454
+5	502	1728694747496771222	CMakeFiles/Graphic_Clock.dir/ClockModel.cpp.o	744290d0bd3925c6
+4	497	1728695340511793871	CMakeFiles/Graphic_Clock.dir/Clock.cpp.o	a66e04e08db97896
+4	506	1728695340511095786	CMakeFiles/Graphic_Clock.dir/main.cpp.o	15d28a1af99defbb
+4	524	1728695340511586121	CMakeFiles/Graphic_Clock.dir/ClockController.cpp.o	e8560a5c011655c2
+524	559	1728695341031114727	Graphic_Clock	1b9487118f978844
