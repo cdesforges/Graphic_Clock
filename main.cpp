@@ -10,10 +10,14 @@ int main()
 
     Clock clock1({100,100});
     Clock clock2({400, 100});
+    Clock clock3({100,400});
+    Clock clock4({400, 400});
     clock2.model.setKeyControls('r','f','t','g','h');
 
     ClockController controller(clock1);
     controller.addClock(clock2);
+    controller.addClock(clock3);
+    controller.addClock(clock4);
 
     while(window.isOpen())
     {
@@ -33,6 +37,8 @@ int main()
 
         window.draw(clock1.view);
         window.draw(clock2.view);
+        window.draw(clock3.view);
+        window.draw(clock4.view);
 
         window.display();
     }
