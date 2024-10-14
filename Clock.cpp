@@ -13,3 +13,8 @@ void Clock::setKeyControls(char incr_hours, char decr_hours, char incr_mins, cha
     model.setKeyControls(incr_hours, decr_hours, incr_mins, decr_mins, switch_AMPM);
 }
 
+void Clock::draw(sf::RenderTarget& window, sf::RenderStates states) const
+{
+    window.draw(view);
+}
+

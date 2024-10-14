@@ -35,10 +35,10 @@ int main()
 
         controller.update();
 
-        window.draw(clock1.view);
-        window.draw(clock2.view);
-        window.draw(clock3.view);
-        window.draw(clock4.view);
+        window.draw(clock1);
+        window.draw(clock2);
+        window.draw(clock3);
+        window.draw(clock4);
 
         window.display();
     }
