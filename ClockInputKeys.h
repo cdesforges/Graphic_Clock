@@ -2,10 +2,10 @@
 // Created by Chandler Desforges on 10/11/24.
 //
 
-#ifndef GRAPHIC_CLOCK_KEYCONTROLS_H
-#define GRAPHIC_CLOCK_KEYCONTROLS_H
+#ifndef GRAPHIC_CLOCK_CLOCKINPUTKEYS_H
+#define GRAPHIC_CLOCK_CLOCKINPUTKEYS_H
 
-struct KeyControls
+struct ClockInputKeys
 {
     char incr_hours = 'q';
     char decr_hours = 'a';
@@ -15,4 +15,4 @@ struct KeyControls
 };
 
 
-#endif //GRAPHIC_CLOCK_KEYCONTROLS_H
+#endif //GRAPHIC_CLOCK_CLOCKINPUTKEYS_H

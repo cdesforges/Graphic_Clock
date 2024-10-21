@@ -21,16 +21,16 @@ void ClockController::eventHandler(sf::Event event)
     {
         if (event.type == sf::Event::TextEntered)
         {
-            if (event.text.unicode == clock->model.getKeyControls().incr_mins)
-                clock->model.incrMinutes();
-            else if (event.text.unicode == clock->model.getKeyControls().decr_mins)
-                clock->model.decrMinutes();
-            else if (event.text.unicode == clock->model.getKeyControls().incr_hours)
-                clock->model.incrHours();
-            else if (event.text.unicode == clock->model.getKeyControls().decr_hours)
-                clock->model.decrHours();
-            else if (event.text.unicode == clock->model.getKeyControls().switch_AMPM)
-                clock->model.shiftHours(12);
+            if (event.text.unicode == clock->m_model.getKeyControls().incr_mins)
+                clock->m_model.incrMinutes();
+            else if (event.text.unicode == clock->m_model.getKeyControls().decr_mins)
+                clock->m_model.decrMinutes();
+            else if (event.text.unicode == clock->m_model.getKeyControls().incr_hours)
+                clock->m_model.incrHours();
+            else if (event.text.unicode == clock->m_model.getKeyControls().decr_hours)
+                clock->m_model.decrHours();
+            else if (event.text.unicode == clock->m_model.getKeyControls().switch_AMPM)
+                clock->m_model.shiftHours(12);
         }
     }
 
@@ -51,7 +51,7 @@ void ClockController::update()
     {
         m_time.restart();
         for(auto& clock : m_clocks)
-            m_reverseTime ? clock->model.decrSeconds() : clock->model.incrSeconds();
+            m_reverseTime ? clock->m_model.decrSeconds() : clock->m_model.incrSeconds();
     }
 
     for(auto& clock : m_clocks)
@@ -64,49 +64,45 @@ void ClockController::update()
 void ClockController::updateModel(Clock& clock)
 {
     // handle AMPM
-    if(clock.model.getHours() >= 12)
-        clock.model.setAMPM("PM");
+    if(clock.m_model.getHours() >= 12)
+        clock.m_model.setAMPM("PM");
     else
-        clock.model.setAMPM("AM");
+        clock.m_model.setAMPM("AM");
 
     // handle overflow
-    if(clock.model.getSeconds() >= 60)
+    if(clock.m_model.getSeconds() >= 60)
     {
-        clock.model.shiftSeconds(-60);
-        clock.model.incrMinutes();
+        clock.m_model.shiftSeconds(-60);
+        clock.m_model.incrMinutes();
     }
-    if(clock.model.getMinutes() >= 60)
+    if(clock.m_model.getMinutes() >= 60)
     {
-        clock.model.shiftMinutes(-60);
-        clock.model.incrHours();
+        clock.m_model.shiftMinutes(-60);
+        clock.m_model.incrHours();
     }
-    if(clock.model.getHours() >= 24)
+    if(clock.m_model.getHours() >= 24)
     {
-        clock.model.shiftHours(-24);
+        clock.m_model.shiftHours(-24);
     }
 
     // handle underflow
-    if(clock.model.getSeconds() < 0)
+    if(clock.m_model.getSeconds() < 0)
     {
-        clock.model.decrMinutes();
-        clock.model.setSeconds(59);
+        clock.m_model.decrMinutes();
+        clock.m_model.setSeconds(59);
     }
-    if(clock.model.getMinutes() < 0)
+    if(clock.m_model.getMinutes() < 0)
     {
-        clock.model.decrHours();
-        clock.model.setMinutes(59);
+        clock.m_model.decrHours();
+        clock.m_model.setMinutes(59);
     }
-    if(clock.model.getHours() < 0)
+    if(clock.m_model.getHours() < 0)
     {
-        clock.model.setHours(23);
+        clock.m_model.setHours(23);
     }
 }
 
 void ClockController::updateView(Clock& clock)
 {
-    // sorry dave I thought this was funny
-    clock.view.setText((clock.model.getHours() % 12 == 0) ? 12 : clock.model.getHours() % 12,
-                       clock.model.getMinutes(),
-                       clock.model.getSeconds(),
-                       clock.model.getAMPM());
+    clock.m_view.update();
 }

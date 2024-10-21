@@ -4,8 +4,8 @@ project(Graphic_Clock)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Graphic_Clock main.cpp
-        Counter.cpp
-        Counter.h
+        CounterModel.cpp
+        CounterModel.h
         ClockController.cpp
         ClockController.h
         CounterView.cpp
@@ -14,9 +14,16 @@ add_executable(Graphic_Clock main.cpp
         ClockView.h
         ClockModel.cpp
         ClockModel.h
-        KeyControls.h
+        ClockInputKeys.h
         Clock.h
-        Clock.cpp)
+        Clock.cpp
+        CounterController.cpp
+        CounterController.h
+        Counter.cpp
+        Counter.h
+        CounterInputKeys.h
+        FontManager.cpp
+        FontManager.h)
 
 target_link_libraries(Graphic_Clock sfml-graphics sfml-audio)
 

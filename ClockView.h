@@ -7,32 +7,41 @@
 
 #include <SFML/Graphics.hpp>
 #include "ClockModel.h"
+#include "CounterView.h"
 #include <iostream>
 
 class ClockView : public sf::Drawable
 {
 private:
-    ClockModel& m_clock;
-    sf::Font m_font;
-    sf::Text m_hours;
-    sf::Text m_minutes;
-    sf::Text m_seconds;
+    const ClockModel& m_model;
+    const sf::Font* m_font;
+    CounterView m_hours;
+    CounterView m_minutes;
+    CounterView m_seconds;
+    sf::Text m_hourColon;
+    sf::Text m_minuteColon;
     sf::Text m_AMPM;
     sf::Vector2f m_position;
-    float m_kerning = 5;
+    float m_kerning = 10;
     sf::Color m_color = sf::Color::White;
 
 public:
-    ClockView(ClockModel& clock, const sf::Vector2f& position);
+    ClockView(const ClockModel& clock, const sf::Vector2f& position);
 
     void initialize();
 
-    void setFont(const sf::Font& font);
-    void setText(int hours, int minutes, int seconds, const std::string& AMPM);
-    void setColor(sf::Color color);
-    void setPosition(sf::Vector2f position);
+    // getters
+    const sf::Vector2f &getPosition() const;
+    int getSize() const;
 
-    static std::string buildString(int val);
+    // setters
+    void setPosition(const sf::Vector2f &position);
+    void setFont(const sf::Font* font);
+    void setText();
+    void setColor(sf::Color color);
+    void setCharacterSize(int size);
+
+    void update();
 
     virtual void draw(sf::RenderTarget& window, sf::RenderStates states) const;
 };

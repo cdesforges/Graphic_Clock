@@ -5,11 +5,11 @@
 #include "ClockModel.h"
 
 ClockModel::ClockModel()
-: m_hours(Counter(0)), m_minutes(Counter(0)), m_seconds(Counter(0)), m_AMPM("AM")
+: m_hours(CounterModel(0)), m_minutes(CounterModel(0)), m_seconds(CounterModel(0)), m_AMPM("AM")
 {}
 
 ClockModel::ClockModel(int hours, int minutes, int seconds)
-: m_hours(Counter(hours)), m_minutes(Counter(minutes)), m_seconds(Counter(seconds)), m_AMPM("AM")
+: m_hours(CounterModel(hours)), m_minutes(CounterModel(minutes)), m_seconds(CounterModel(seconds)), m_AMPM("AM")
 {}
 
 int ClockModel::getSeconds() const
@@ -17,7 +17,7 @@ int ClockModel::getSeconds() const
     return m_seconds.getCount();
 }
 
-void ClockModel::setSeconds(const Counter &mSeconds)
+void ClockModel::setSeconds(const CounterModel &mSeconds)
 {
     m_seconds = mSeconds;
 }
@@ -27,7 +27,7 @@ int ClockModel::getMinutes() const
     return m_minutes.getCount();
 }
 
-void ClockModel::setMinutes(const Counter &mMinutes)
+void ClockModel::setMinutes(const CounterModel &mMinutes)
 {
     m_minutes = mMinutes;
 }
@@ -37,12 +37,12 @@ int ClockModel::getHours() const
     return m_hours.getCount();
 }
 
-const KeyControls &ClockModel::getKeyControls()
+const ClockInputKeys &ClockModel::getKeyControls()
 {
     return m_controls;
 }
 
-void ClockModel::setHours(const Counter &mHours)
+void ClockModel::setHours(const CounterModel &mHours)
 {
     m_hours = mHours;
 }
@@ -147,4 +147,24 @@ void ClockModel::decrMinutes()
 void ClockModel::decrHours()
 {
     m_hours--;
+}
+
+const CounterModel &ClockModel::getHoursRef() const
+{
+    return m_hours;
+}
+
+const CounterModel &ClockModel::getMinutesRef() const
+{
+    return m_minutes;
+}
+
+const CounterModel &ClockModel::getSecondsRef() const
+{
+    return m_seconds;
+}
+
+const std::string &ClockModel::getAMPMRef() const
+{
+    return m_AMPM;
 }

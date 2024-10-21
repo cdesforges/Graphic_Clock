@@ -1,69 +1,40 @@
 //
-// Created by Chandler Desforges on 10/8/24.
+// Created by Chandler Desforges on 10/14/24.
 //
 
 #include "Counter.h"
 
-Counter::Counter()
-: m_count(0)
+Counter::Counter(sf::Vector2f position)
+: m_view(m_model)
 {}
 
-Counter::Counter(int startVal)
-: m_count(startVal)
-{}
-
-int Counter::getCount() const
+const sf::Vector2f &Counter::getPosition() const
 {
-    return m_count;
+    return m_view.getPosition();
 }
 
-void Counter::setCount(int count)
+int Counter::getCharacterSize() const
 {
-    m_count = count;
+    return m_view.getCharacterSize();
 }
 
-Counter operator+(const Counter &lhs, const Counter &rhs)
+void Counter::setPosition(const sf::Vector2f &position)
 {
-    return {lhs.m_count + rhs.m_count};
+    m_view.setPosition(position);
 }
 
-Counter operator-(const Counter &lhs, const Counter &rhs)
+void Counter::setCharacterSize(int size)
 {
-    return {lhs.m_count - rhs.m_count};
+    m_view.setCharacterSize(size);
 }
 
-Counter Counter::operator++(int)
+void Counter::setKeyControls(char incr, char decr)
 {
-    Counter preIncr(m_count);
-    m_count++;
-
-    return preIncr;
+    m_inputs.decr = decr;
+    m_inputs.incr = incr;
 }
 
-void Counter::operator++()
+void Counter::draw(sf::RenderTarget &window, sf::RenderStates states) const
 {
-    ++m_count;
-}
-
-Counter Counter::operator--(int)
-{
-    Counter preIncr(m_count);
-    m_count--;
-
-    return preIncr;
-}
-
-void Counter::operator--()
-{
-    --m_count;
-}
-
-void Counter::operator+=(int rhs)
-{
-    m_count += rhs;
-}
-
-void Counter::operator-=(int rhs)
-{
-    m_count -= rhs;
+    window.draw(m_view);
 }

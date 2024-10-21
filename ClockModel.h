@@ -5,19 +5,19 @@
 #ifndef GRAPHIC_CLOCK_CLOCKMODEL_H
 #define GRAPHIC_CLOCK_CLOCKMODEL_H
 
-#include "Counter.h"
+#include "CounterModel.h"
 #include <string>
 #include <SFML/Graphics.hpp>
-#include "KeyControls.h"
+#include "ClockInputKeys.h"
 
 class ClockModel
 {
 private:
-    Counter m_seconds;
-    Counter m_minutes;
-    Counter m_hours;
+    CounterModel m_hours;
+    CounterModel m_minutes;
+    CounterModel m_seconds;
     std::string m_AMPM;
-    KeyControls m_controls;
+    ClockInputKeys m_controls;
 
 public:
     ClockModel();
@@ -28,13 +28,17 @@ public:
     int getMinutes() const;
     int getHours() const;
     const std::string &getAMPM() const;
-    const KeyControls& getKeyControls();
+    const ClockInputKeys& getKeyControls();
+    const CounterModel &getHoursRef() const;
+    const CounterModel &getMinutesRef() const;
+    const CounterModel &getSecondsRef() const;
+    const std::string &getAMPMRef() const;
 
 
     // setters
-    void setSeconds(const Counter &mSeconds);
-    void setMinutes(const Counter &mMinutes);
-    void setHours(const Counter &mHours);
+    void setSeconds(const CounterModel &mSeconds);
+    void setMinutes(const CounterModel &mMinutes);
+    void setHours(const CounterModel &mHours);
     void setAMPM(const std::string &AMPM);
     void setKeyControls(char incr_hours, char decr_hours, char incr_mins, char decr_mins, char switch_AMPM);
 

@@ -56,8 +56,8 @@ build CMakeFiles/Graphic_Clock.dir/main.cpp.o: CXX_COMPILER__Graphic_Clock_unsca
   OBJECT_DIR = CMakeFiles/Graphic_Clock.dir
   OBJECT_FILE_DIR = CMakeFiles/Graphic_Clock.dir
 
-build CMakeFiles/Graphic_Clock.dir/Counter.cpp.o: CXX_COMPILER__Graphic_Clock_unscanned_Debug /Users/cdesforges/Documents/Personal/2024/School/Fall$ 2024/CS03A/Labs/Graphic_Clock/Counter.cpp || cmake_object_order_depends_target_Graphic_Clock
-  DEP_FILE = CMakeFiles/Graphic_Clock.dir/Counter.cpp.o.d
+build CMakeFiles/Graphic_Clock.dir/CounterModel.cpp.o: CXX_COMPILER__Graphic_Clock_unscanned_Debug /Users/cdesforges/Documents/Personal/2024/School/Fall$ 2024/CS03A/Labs/Graphic_Clock/CounterModel.cpp || cmake_object_order_depends_target_Graphic_Clock
+  DEP_FILE = CMakeFiles/Graphic_Clock.dir/CounterModel.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
   INCLUDES = -isystem /opt/homebrew/include
   OBJECT_DIR = CMakeFiles/Graphic_Clock.dir
@@ -98,6 +98,27 @@ build CMakeFiles/Graphic_Clock.dir/Clock.cpp.o: CXX_COMPILER__Graphic_Clock_unsc
   OBJECT_DIR = CMakeFiles/Graphic_Clock.dir
   OBJECT_FILE_DIR = CMakeFiles/Graphic_Clock.dir
 
+build CMakeFiles/Graphic_Clock.dir/CounterController.cpp.o: CXX_COMPILER__Graphic_Clock_unscanned_Debug /Users/cdesforges/Documents/Personal/2024/School/Fall$ 2024/CS03A/Labs/Graphic_Clock/CounterController.cpp || cmake_object_order_depends_target_Graphic_Clock
+  DEP_FILE = CMakeFiles/Graphic_Clock.dir/CounterController.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/Graphic_Clock.dir
+  OBJECT_FILE_DIR = CMakeFiles/Graphic_Clock.dir
+
+build CMakeFiles/Graphic_Clock.dir/Counter.cpp.o: CXX_COMPILER__Graphic_Clock_unscanned_Debug /Users/cdesforges/Documents/Personal/2024/School/Fall$ 2024/CS03A/Labs/Graphic_Clock/Counter.cpp || cmake_object_order_depends_target_Graphic_Clock
+  DEP_FILE = CMakeFiles/Graphic_Clock.dir/Counter.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/Graphic_Clock.dir
+  OBJECT_FILE_DIR = CMakeFiles/Graphic_Clock.dir
+
+build CMakeFiles/Graphic_Clock.dir/FontManager.cpp.o: CXX_COMPILER__Graphic_Clock_unscanned_Debug /Users/cdesforges/Documents/Personal/2024/School/Fall$ 2024/CS03A/Labs/Graphic_Clock/FontManager.cpp || cmake_object_order_depends_target_Graphic_Clock
+  DEP_FILE = CMakeFiles/Graphic_Clock.dir/FontManager.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/Graphic_Clock.dir
+  OBJECT_FILE_DIR = CMakeFiles/Graphic_Clock.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Graphic_Clock
@@ -106,7 +127,7 @@ build CMakeFiles/Graphic_Clock.dir/Clock.cpp.o: CXX_COMPILER__Graphic_Clock_unsc
 #############################################
 # Link the executable Graphic_Clock
 
-build Graphic_Clock: CXX_EXECUTABLE_LINKER__Graphic_Clock_Debug CMakeFiles/Graphic_Clock.dir/main.cpp.o CMakeFiles/Graphic_Clock.dir/Counter.cpp.o CMakeFiles/Graphic_Clock.dir/ClockController.cpp.o CMakeFiles/Graphic_Clock.dir/CounterView.cpp.o CMakeFiles/Graphic_Clock.dir/ClockView.cpp.o CMakeFiles/Graphic_Clock.dir/ClockModel.cpp.o CMakeFiles/Graphic_Clock.dir/Clock.cpp.o | /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/lib/libsfml-window.2.6.1.dylib /opt/homebrew/lib/libsfml-system.2.6.1.dylib
+build Graphic_Clock: CXX_EXECUTABLE_LINKER__Graphic_Clock_Debug CMakeFiles/Graphic_Clock.dir/main.cpp.o CMakeFiles/Graphic_Clock.dir/CounterModel.cpp.o CMakeFiles/Graphic_Clock.dir/ClockController.cpp.o CMakeFiles/Graphic_Clock.dir/CounterView.cpp.o CMakeFiles/Graphic_Clock.dir/ClockView.cpp.o CMakeFiles/Graphic_Clock.dir/ClockModel.cpp.o CMakeFiles/Graphic_Clock.dir/Clock.cpp.o CMakeFiles/Graphic_Clock.dir/CounterController.cpp.o CMakeFiles/Graphic_Clock.dir/Counter.cpp.o CMakeFiles/Graphic_Clock.dir/FontManager.cpp.o | /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/lib/libsfml-window.2.6.1.dylib /opt/homebrew/lib/libsfml-system.2.6.1.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib  /opt/homebrew/lib/libsfml-audio.2.6.1.dylib  /opt/homebrew/lib/libsfml-window.2.6.1.dylib  /opt/homebrew/lib/libsfml-system.2.6.1.dylib
   OBJECT_DIR = CMakeFiles/Graphic_Clock.dir
